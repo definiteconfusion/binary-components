@@ -8,7 +8,7 @@ function paddingCalc(maxWidth:number, widthType:string){
     )
 }
 
-const RectButton = ({ children, onClick, className, style, role, widthType="100%" }) =>{
+const RectButton = ({ children, onClick, onHover, className, style, role, widthType="100%" }) =>{
     // Gets values for role to determine foreground and background color classes
     let backing = role === "primary" ? "bg-black" : "bg-white"; let fore = role === "primary" ? "fg-white" : "fg-black"
     return(
@@ -18,6 +18,7 @@ const RectButton = ({ children, onClick, className, style, role, widthType="100%
                 paddingInline: paddingCalc(6, widthType),... style
             }}
             onClick={onClick}
+            onDragOver={onHover}
         >
             {children}
         </div>
