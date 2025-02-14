@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.sass';
-import Styles from './Styles/Styles.js';
+import Styles from './Styles/Styles.ts';
 import { RectButton, ButtonGroup } from './Buttons/Buttons.tsx'
 
 const App = () =>{
@@ -27,7 +27,7 @@ const App = () =>{
                     style={{
                         lineHeight: '0'
                     }}
-                >Add to Cart</h3>
+                >See More</h3>
             </RectButton>
         </ButtonGroup>
     );
