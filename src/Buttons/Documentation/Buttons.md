@@ -1,4 +1,3 @@
-<style>body{background-color: white; color: black;}</style>
 # Buttons
 ## RectButton
 <img alt="Logo" src="./primary.png" style="height: 4rem"></img>
