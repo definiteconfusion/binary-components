@@ -7,22 +7,14 @@ import { CheckBox } from './Inputs/Inputs.tsx'
 const App = () =>{
     return (
         <>
-        <div
-            style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center"
-            }}
-        >
-            <CheckBox />
-            <h3
-                style={{
-                    marginLeft: "1rem",
-                    lineHeight: "0"
-                }}
-            >Select</h3>
-        </div>
+            <RectButton
+                role="primary"
+                widthType="200"
+                onClick={()=>{console.log("Hello World")}}
+                onHover={()=>{console.log("Hovered")}}
+            >
+                <p>Hello World</p>
+            </RectButton>
         </>
     );
 }

@@ -5,6 +5,8 @@
     width: 0.75rem
     height: 0.75rem
     cursor: pointer
+    margin-top: 5px // Added this because fsr the container is 20x25, not 20x20, no idea
+    margin-inline: 5px
 .checkbox-active
     all: unset
     margin: 0
@@ -13,6 +15,11 @@
     height: 0.75rem
     background-color: black
     cursor: pointer
+    margin-top: 5px // Same deal obvously
+    margin-inline: 5px
 .checkmark-checkpath
     position: absolute
     z-index: 100
+    display: flex
+    justify-content: center
+    align-items: center

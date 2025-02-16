@@ -24,7 +24,7 @@ const CheckBox = ({ currentState=false }) => {
                 className="checkmark-checkpath"
                 style={{
                 position: 'absolute',
-                top: '40%',
+                top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 pointerEvents: 'none'

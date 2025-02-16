@@ -18,7 +18,7 @@ const RectButton = ({ children, onClick, onHover, className, style, role, widthT
                 paddingInline: paddingCalc(6, widthType),... style
             }}
             onClick={onClick}
-            onDragOver={onHover}
+            onMouseOver={onHover}
         >
             {children}
         </div>
