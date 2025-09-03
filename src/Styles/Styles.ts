@@ -1,1 +1,1 @@
-import './Styles.sass'; export const Styles = () =>{}
+import './Styles.sass';console.log("Binary Components Styles Loaded! 🚀\nhttps://github.com/definiteconfusion/binary-components"); export const Styles = () =>{}

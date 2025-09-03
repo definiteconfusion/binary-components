@@ -1,13 +1,25 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './Inputs.sass'
 
-const CheckBox = ({ currentState=false }) => {
-    const [isActive, setIsActive] = useState(currentState)
+// Takes in x% of 100 and outputs to x% of maxWidth
+function paddingCalc(maxWidth:number, widthType:string = "100%"){
+    let algoWid = String(((Number(widthType.replace("%", "")) / 40) * maxWidth).toFixed(1)) + "rem"
+    return(
+        algoWid
+    )
+}
+
+const CheckBox = ({ initState: initState = false, onChange }) => {
+    const [isActive, setIsActive] = useState(initState)
+    useEffect(() => {
+        setIsActive(initState)
+    }, [initState])
 
     const handleChange = () => {
-        setIsActive(!isActive)
-        currentState = isActive
+        const newState = !isActive
+        setIsActive(newState)
+        onChange?.(newState)
     }
     let svgHeight = 11
     return(
@@ -43,4 +55,20 @@ const CheckBox = ({ currentState=false }) => {
     )
 }
 
-export { CheckBox }
+const Input = ({ type, placeholder, value, onChange, widthType, style }) => {
+    return(
+        <input
+            className="input-box br-1"
+            style={{
+                width: paddingCalc(6, widthType),
+                ... style
+            }}
+            type={type}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+        />
+    )
+}
+
+export { CheckBox, Input }
