@@ -1,0 +1,19 @@
+@use 'sass:math';
+    
+@function fontSizeCalc($step)
+    $b: 3.3
+    $k: 0.95
+    $t: 5.15
+    @return math.pow($b, $step - $t) + $k
+
+.link
+    all: unset
+    text-decoration: underline
+    cursor: pointer
+
+$text-sizes: (h1: 6, h2: 5, h3:4, h4:3, h5:2, h6:1, p:0)
+@each $key, $value in $text-sizes
+    .#{$key}
+        p
+            all: unset
+        font-size: fontSizeCalc($value) + rem 

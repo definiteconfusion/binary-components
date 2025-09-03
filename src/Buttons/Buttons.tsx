@@ -25,6 +25,37 @@ const RectButton = ({ children, onClick, onHover, className, style, role, widthT
     )
 }
 
+const CapsuleButton = ({ children, onClick, onHover, className, style, role, widthType="100%" }) =>{
+    // Gets values for role to determine foreground and background color classes
+    //// let backing = role === "primary" ? "bg-black" : "bg-white";
+    let fore = role === "primary" ? "fg-white" : "fg-black"
+    let themeColors = {
+        "primary": "bg-black",
+        "secondary":"bg-white",
+        "affirmative": "bg-blue",
+        "constructive": "bg-green",
+        "destructive": "bg-red"
+    }
+    let backing;
+    if (role in themeColors){
+        backing = themeColors[role]
+    }
+
+
+    return(
+        <div
+            className={`classic-button ${backing} ${fore} br-15 cr-pnt ${className}`}
+            style={{
+                paddingInline: paddingCalc(2, widthType),... style
+            }}
+            onClick={onClick}
+            onMouseOver={onHover}
+        >
+            {children}
+        </div>
+    )
+}
+
 const ButtonGroup = ({ children, seperation="0rem", direction }) => {
     let marginDir = direction === "row" ? "marginInline" : "marginBlock"
     return(
@@ -47,4 +78,4 @@ const ButtonGroup = ({ children, seperation="0rem", direction }) => {
     )
 }
 
-export { RectButton, ButtonGroup }
+export { RectButton, CapsuleButton, ButtonGroup }
